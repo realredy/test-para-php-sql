@@ -1,4 +1,7 @@
-
+<?php
+if(!isset($_SESSION)){
+  session_start(); }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,19 +17,22 @@
      <div class="logo">
      	<img src="img/destinia.png" alt="">
       <img src="img/lg.jpg" alt="" class="loguin">
+      <?php
+      if(isset($_SESSION['user'])){
+      ?>
       <a href="listado.php"><img src="img/lista.jpg" alt="" class="lista"></a>
+      <?php } ?>
      </div>
 </head>
 <?php   
-if(!isset($_SESSION)){
-  session_start(); }
+
 if(isset($_SESSION['user'])){
 
 }else{ ?>
 
 
           <!-- section form -->
-<section id="loguin" style="display:none;">
+<section id="loguin" >
   <form id="form_loguin">
     <input type="text" name="nombre" required>
     <input type="password" name="pass" required>
@@ -54,6 +60,39 @@ if(isset($_SESSION['user'])){
 
  
 <script>
+  
+ console.log('funciona');
+/*seleccionamos el formulario en una variable*/
+var fo = document.querySelector('#form_loguin');
+
+	 // var formulario = document.querySelector("#form_loguin");
+	 
+	//creamos la funcion que capta el envio del formulario
+	fo.addEventListener("submit", function(m){
+    //impedimos que se refresque la pagina
+	m.preventDefault();
+	console.log(fo);
+	//capturamos los datos del formulario
+     var data = new FormData(fo);
+    //guardamos en variables los datos obtenidos en el formulario
+     var nmb = data.get('nombre');
+     var pas = data.get('pass');
+    // enviamos el formulario via post
+     fetch('seccion.php',{
+     	method:'post',
+     	body: data
+     }).then(d=> d.text())
+       .then(d=>{ 
+       	// console.log(d + 'esto viene desde la consola');
+     	if(d == true){
+     		window.location.href = "listado.php";
+     	}
+     })
+  
+  });
+
+     
+ 
   const forma = document.querySelector('#form_buscar');//formulario
   const fol = document.querySelector('#searchs'); //input
   const iner = document.querySelector('#bod'); 
