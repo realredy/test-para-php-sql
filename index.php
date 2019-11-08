@@ -57,16 +57,14 @@ if(isset($_SESSION['user'])){
   
 </section>
  
-
- 
 <script>
-  
  console.log('funciona');
 /*seleccionamos el formulario en una variable*/
 var fo = document.querySelector('#form_loguin');
 
 	 // var formulario = document.querySelector("#form_loguin");
 	 
+   
 	//creamos la funcion que capta el envio del formulario
 	fo.addEventListener("submit", function(m){
     //impedimos que se refresque la pagina
@@ -87,11 +85,13 @@ var fo = document.querySelector('#form_loguin');
      	if(d == true){
      		window.location.href = "listado.php";
      	}
-     })
-  
-  });
-
-     
+     });
+    });
+   
+</script>
+ 
+<script>
+   
  
   const forma = document.querySelector('#form_buscar');//formulario
   const fol = document.querySelector('#searchs'); //input
@@ -143,21 +143,13 @@ for(let lo of dat) {
                     
                         }); 
 viene();
-                        };
+                        }
 
 
 
 var lol = "";
-    
- 
-            
-                  
-
-
-
-
-                    function viene(){
-                       iner.innerHTML = "";
+  function viene(){
+     iner.innerHTML = "";
 
                        let dosmija = fol.value.toLowerCase();
                           for(let ma of lol) {

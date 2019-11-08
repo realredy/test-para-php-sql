@@ -14,7 +14,7 @@ $pass   = md5( $_POST['pass']);
 
 //comprobamos que no este nulos los parametros
 if($nombre !== "ricardo" || $passw !== "ric123"){
-	header('location:index.php');
+	header('location:localhost/index.php');
  } else{
 
 $inser = "INSERT INTO usuarios (nombre, pass) VALUES (?,?)";
@@ -24,6 +24,7 @@ if($sale == true){
 
 	$_SESSION['user'] = $nombre;  
 	echo true;
+	 
 }
 
 }
