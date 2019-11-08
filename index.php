@@ -50,54 +50,9 @@ if(isset($_SESSION['user'])){
 <section id="bod">
   
 </section>
+ 
 
-
-<?php   
-
-
-
-
- ?>
-
-
-
-
-
-
-  <script>
-//  console.log('funciona');
-// /*seleccionamos el formulario en una variable*/
-// var fo = document.querySelector('#form_loguin');
-
-// 	 // var formulario = document.querySelector("#form_loguin");
-	 
-// 	//creamos la funcion que capta el envio del formulario
-// 	fo.addEventListener("submit", function(m){
-//     //impedimos que se refresque la pagina
-// 	m.preventDefault();
-// 	console.log(fo);
-// 	//capturamos los datos del formulario
-//      var data = new FormData(fo);
-//     //guardamos en variables los datos obtenidos en el formulario
-//      var nmb = data.get('nombre');
-//      var pas = data.get('pass');
-//     // enviamos el formulario via post
-//      fetch('seccion.php',{
-//      	method:'post',
-//      	body: data
-//      }).then(d=> d.text())
-//        .then(d=>{ 
-//        	// console.log(d + 'esto viene desde la consola');
-//      	if(d == true){
-//      		window.location.href = "listado.php";
-//      	}
-//      })
-  
-//   });
-
-     
-</script>
-
+ 
 <script>
   const forma = document.querySelector('#form_buscar');//formulario
   const fol = document.querySelector('#searchs'); //input
@@ -112,9 +67,38 @@ fetch('json.php').then(dat=> dat.json())
         .then(function (dat){
 console.log(dat)
 for(let lo of dat) {
-  iner.innerHTML += `
-                                        <b>${lo.ciudad}</b>
-                                     `
+  iner.innerHTML +=   ` <div class="info">
+               <div class="wrapper_img">
+                 <img src="${lo.imagen}">
+                 <h1>${lo.nombre}</h1>
+               </div>
+                <table>
+                <tr>
+                <td>ciudad</td>
+                <td>${lo.ciudad}</td>
+                </tr>
+                <tr>
+                <td>provincia</td>
+                <td>${lo.provincia}</td>
+                </tr>
+                <tr>
+                <td>tipo</td>
+                <td>${lo.tipo}</td>
+                </tr>
+                <tr>
+                <td>estrellas</td>
+                <td>${lo.estrellas}</td>
+                </tr>
+                <tr>
+                <td>capacidad por Hab.</td>
+                <td>${lo.capacidad}</td>
+                </tr>
+                <tr>
+                <td>Habitacion Modo</td>
+                <td>${lo.tipo_hab}</td>
+                </tr>
+                </table>
+              </div>`
 }
                     return lol = dat;
                     
@@ -142,9 +126,38 @@ var lol = "";
                                if(mas.indexOf(dosmija) !== -1){ 
                                       
                                      console.log(ma.ciudad)
-                                     iner.innerHTML += `
-                                        <b>${ma.ciudad}</b>
-                                     `
+                                     iner.innerHTML +=  ` <div class="info">
+               <div class="wrapper_img">
+                 <img src="${ma.imagen}">
+                 <h1>${ma.nombre}</h1>
+               </div>
+                <table>
+                <tr>
+                <td>ciudad</td>
+                <td>${ma.ciudad}</td>
+                </tr>
+                <tr>
+                <td>provincia</td>
+                <td>${ma.provincia}</td>
+                </tr>
+                <tr>
+                <td>tipo</td>
+                <td>${ma.tipo}</td>
+                </tr>
+                <tr>
+                <td>estrellas</td>
+                <td>${ma.estrellas}</td>
+                </tr>
+                <tr>
+                <td>capacidad por Hab.</td>
+                <td>${ma.capacidad}</td>
+                </tr>
+                <tr>
+                <td>Habitacion Modo</td>
+                <td>${ma.tipo_hab}</td>
+                </tr>
+                </table>
+              </div>`
                                       
                               } 
                                     // console.log(dosmija)
