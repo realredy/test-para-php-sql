@@ -1,0 +1,67 @@
+/* line 1, estilo.scss */
+body { background: white; }
+
+/* line 4, estilo.scss */
+* { font-family: helvetica; }
+
+/* line 5, estilo.scss */
+.logo { height: 100px; background-color: #EC5B14; }
+/* line 8, estilo.scss */
+.logo svg { shape-rendering: geometricPrecision; width: 100px; height: 17px; fill: red; }
+
+/* line 16, estilo.scss */
+.logo .loguin { width: 40px; float: right; margin: 20px; border-radius: 10px; }
+
+/* line 23, estilo.scss */
+#loguin { width: 100%; background: gray; }
+/* line 27, estilo.scss */
+#loguin #form_loguin { width: 95%; max-width: 600px; height: auto; padding: 3%; margin: 0 auto; }
+/* line 33, estilo.scss */
+#loguin #form_loguin input { width: 95%; height: 30px; display: block; margin-bottom: 5px; padding: 5px 10px; font-size: 15px; }
+/* line 41, estilo.scss */
+#loguin #form_loguin input[type='submit'] { height: 40px; background-color: #EC5B14; border: none; display: block; width: 98%; color: white; }
+
+/* line 53, estilo.scss */
+#listado { width: 100%; padding: 2%; }
+/* line 56, estilo.scss */
+#listado input { width: 95%; margin-bottom: 10px; height: 30px; }
+/* line 60, estilo.scss */
+#listado input[type="submit"] { height: 45px; background: #EC5B14; border: none; color: white; font-weight: 600; }
+/* line 68, estilo.scss */
+#listado label { display: block; margin-bottom: 3px; }
+/* line 69, estilo.scss */
+#listado select { width: 30%; height: 30px; margin-bottom: 10px; }
+
+/* line 77, estilo.scss */
+span.msg { padding: 1%; margin: 0 0 20px 0 !important; background: green; display: block; width: 95%; font-weight: 600; color: white; }
+
+/* line 87, estilo.scss */
+.lista { display: block; width: 35px; border-radius: 20px; float: right; margin: 18px 0; }
+
+/* line 94, estilo.scss */
+#bod { display: flex; flex-wrap: wrap; padding: 15px 0; }
+/* line 98, estilo.scss */
+#bod .info { width: 45%; max-width: 400px; background: #f7f7f7; margin: 0 15px 15px; }
+/* line 100, estilo.scss */
+#bod .info .wrapper_img { height: 200px; border: solid 1px #8a8a8a; overflow: hidden; position: relative; }
+/* line 102, estilo.scss */
+#bod .info .wrapper_img img { height: 120%; }
+/* line 103, estilo.scss */
+#bod .info .wrapper_img h1 { position: absolute; bottom: 0; background: #d5d5d5a3; display: block; width: 60%; padding: 5px 8px; }
+/* line 106, estilo.scss */
+#bod .info table { width: 100%; padding: 0; }
+/* line 107, estilo.scss */
+#bod .info table tr { padding: 0; }
+/* line 108, estilo.scss */
+#bod .info table td { border: dashed 1px #ddd; padding: 2px; }
+
+/* line 116, estilo.scss */
+#search { background: gray; }
+/* line 118, estilo.scss */
+#search label { display: block; padding: 10px; color: white; overflow: hidden; }
+/* line 121, estilo.scss */
+#search input { display: inline-block; border: none; background: white; width: 60%; margin: 0 0 5px 13px; height: 30px; border-radius: 3px; }
+/* line 125, estilo.scss */
+#search input[type="submit"] { margin-bottom: 15px !important; height: 35px; clear: both; background: #EC5B14; width: 35%; color: white; font-weight: 600; }
+
+/*# sourceMappingURL=estilo.css.map */

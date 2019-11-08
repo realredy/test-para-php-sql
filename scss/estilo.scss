@@ -1,0 +1,130 @@
+body{
+	background: white;
+}
+*{font-family: helvetica;}
+.logo {
+  height: 100px;
+  background-color:#EC5B14;
+    svg{
+    shape-rendering: geometricPrecision;
+    width: 100px;
+    height: 17px;
+    fill:red;
+}
+}
+.logo {
+	.loguin{
+		width: 40px; 
+		float: right; 
+		margin: 20px; 
+		border-radius: 10px;
+	}
+	}
+#loguin{
+//  display: none;
+width:100%;
+background:gray;
+#form_loguin{
+	width:95%;
+	max-width: 600px;
+	height: auto;
+	padding:3%;
+	margin:0 auto;
+	input{
+		width: 95%;
+		height:30px;
+		display: block;
+		margin-bottom:5px;
+		padding:5px 10px;
+		font-size:15px;
+	}
+	input[type='submit']{
+		height: 40px;
+		background-color:#EC5B14;
+		border:none;
+		display: block;
+		width:98%;
+		color:white;
+	}
+   }
+}
+
+
+#listado{
+  width: 100%;
+  padding: 2%;
+  input{
+	  width: 95%; margin-bottom: 10px; 
+	height: 30px
+}
+input[type="submit"]{
+	height: 45px;
+	background: #EC5B14;;
+	border:none;
+	color:white;
+	font-weight: 600;
+}
+
+  label{display: block; margin-bottom:3px }
+  select  {width:30%;
+	height: 30px; 
+	margin-bottom: 10px
+  }
+
+
+}
+
+span.msg{
+	padding: 1%;
+	margin: 0 0 20px 0!important;
+	background: green;
+	display: block;
+	width: 95%;
+	font-weight: 600;
+	color: white;
+  }
+
+  .lista{display: block; 
+	width: 35px;
+	border-radius: 20px;
+	float: right;
+	margin: 18px 0;
+	}
+  
+	#bod{
+		display: flex;
+		flex-wrap: wrap;
+		  padding:15px 0;
+	  .info{width: 45%; max-width: 400px;  background: #f7f7f7;
+	  margin:0 15px 15px ;
+	  .wrapper_img{height: 200px; border: solid 1px #8a8a8a; 
+		overflow: hidden; position:relative;
+		img{height: 120%}
+		h1{position: absolute; bottom: 0; background:#d5d5d5a3;
+			display: block; width: 60%; padding:5px 8px;}
+		}
+		table{width: 100%; padding: 0;
+			tr{padding: 0;}
+			td{border: dashed 1px #ddd; padding: 2px}
+		}
+	}
+	
+	}
+	    
+	  
+	    
+	#search{
+		background: gray;
+		label{display: block; padding: 10px; 
+			color: white; overflow:hidden;
+		}
+			input{display: inline-block; border: none;
+				background: white; width: 60%;   margin: 0 0 5px 13px; 
+				height: 30px; border-radius: 3px;
+			}
+			input[type="submit"]{margin-bottom:15px!important; height:35px;
+				clear: both; background: #EC5B14; width: 35%; color: white;
+				font-weight: 600;}
+	}
+	  
+	 
