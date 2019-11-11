@@ -48,9 +48,9 @@ if(isset($_SESSION['user'])){
 
 
 <form id="form_buscar">
-  <label for="search">Buscar una propiedad en específico</label>
+  <label for="search">Buscar propiedad por ciudad</label>
   <input type="text" name="search" id="searchs" value="">
-  <input type="submit" value="buscar" >
+  <!-- <input type="submit" value="buscar" > -->
 </form>
 
 <section id="bod">
@@ -69,7 +69,7 @@ var fo = document.querySelector('#form_loguin');
 	fo.addEventListener("submit", function(m){
     //impedimos que se refresque la pagina
 	m.preventDefault();
-	console.log(fo);
+	// console.log(fo);
 	//capturamos los datos del formulario
      var data = new FormData(fo);
     //guardamos en variables los datos obtenidos en el formulario
@@ -83,6 +83,7 @@ var fo = document.querySelector('#form_loguin');
        .then(d=>{ 
        	// console.log(d + 'esto viene desde la consola');
      	if(d == true){
+         data.value = "";
      		window.location.href = "listado.php";
      	}
      });
@@ -91,24 +92,18 @@ var fo = document.querySelector('#form_loguin');
 </script>
  
 <script>
-   
- 
-  const forma = document.querySelector('#form_buscar');//formulario
+   const forma = document.querySelector('#form_buscar');//formulario
   const fol = document.querySelector('#searchs'); //input
   const iner = document.querySelector('#bod'); 
-    
-
-
-
- window.onload = function() {
-                      
+  window.onload = function() {
+    var s = '⭐';                 
 fetch('json.php').then(dat=> dat.json())
         .then(function (dat){
-console.log(dat)
+// console.log(dat)
 for(let lo of dat) {
   iner.innerHTML +=   ` <div class="info">
                <div class="wrapper_img">
-                 <img src="${lo.imagen}">
+                 <img src="${lo.imagen}" id="na">
                  <h1>${lo.nombre}</h1>
                </div>
                 <table>
@@ -126,7 +121,7 @@ for(let lo of dat) {
                 </tr>
                 <tr>
                 <td>estrellas</td>
-                <td>${lo.estrellas}</td>
+                <td>`+   s.repeat(lo.estrellas) + `</td>
                 </tr>
                 <tr>
                 <td>capacidad por Hab.</td>
@@ -138,12 +133,13 @@ for(let lo of dat) {
                 </tr>
                 </table>
               </div>`
-}
-                    return lol = dat;
-                    
-                        }); 
-viene();
-                        }
+}//for closed
+                    return lol = dat;// pasa los datos a la  variable lol
+                     
+                   
+                        }); //then closed
+viene(); //inicializa la funcion aunque no se ha creado.
+                        }// on load closed
 
 
 
@@ -155,8 +151,9 @@ var lol = "";
                           for(let ma of lol) {
                              let mas = ma.ciudad.toLowerCase();  
                                if(mas.indexOf(dosmija) !== -1){ 
-                                      
-                                     console.log(ma.ciudad)
+                                      var s = '⭐';
+                                    // var p = s.repeat(ma.estrellas);
+                                      // console.log(p)
                                      iner.innerHTML +=  ` <div class="info">
                <div class="wrapper_img">
                  <img src="${ma.imagen}">
@@ -177,7 +174,7 @@ var lol = "";
                 </tr>
                 <tr>
                 <td>estrellas</td>
-                <td>${ma.estrellas}</td>
+                <td>`+   s.repeat(ma.estrellas) + `</td>
                 </tr>
                 <tr>
                 <td>capacidad por Hab.</td>
@@ -191,30 +188,15 @@ var lol = "";
               </div>`
                                       
                               } 
-                                    // console.log(dosmija)
+                                     
                                   }  
                                    }
 
-
-
-
-                               
- 
-fol.addEventListener("keyup", viene); 
+ fol.addEventListener("keyup", viene); 
 /*****************************************/
-     
-      
-    viene();
-  
-
-
-
-  // (function(){  console.log(salida)  })(); 
+  viene();
    
-
-   
-    
 </script>
-	
+ 
 </body>
 </html>

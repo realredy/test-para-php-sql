@@ -12,22 +12,24 @@ $nombre = $_POST['nombre'];
 $passw   =  $_POST['pass']; 
 $pass   = md5( $_POST['pass']); 
 
+
+
 //comprobamos que no este nulos los parametros
 if($nombre !== "ricardo" || $passw !== "ric123"){
 	header('location:localhost/index.php');
  } else{
 
-$inser = "INSERT INTO usuarios (nombre, pass) VALUES (?,?)";
-$objet = $cn->prepare($inser);
-$sale = $objet->execute([$nombre,$pass]);
-if($sale == true){
+// $inser = "INSERT INTO usuarios (nombre, pass) VALUES (?,?)";
+// $objet = $cn->prepare($inser);
+// $sale = $objet->execute([$nombre,$pass]);
+// if($sale == true){
 
 	$_SESSION['user'] = $nombre;  
 	echo true;
 	 
 }
 
-}
+// }
 
 
 
