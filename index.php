@@ -48,8 +48,19 @@ if(isset($_SESSION['user'])){
 
 
 <form id="form_buscar">
+  <div class="leg">
+  <label for="tp_src">Buscar por ciudad o nombre del hotel</label>
+    <select id="tp_src">
+      <option value="nombre">Nombre</option>
+      <option value="ciudad">Ciudad</option>
+    </select>
+  </div>
+  <div class="right">
+   
   <label for="search">Buscar propiedad por ciudad</label>
   <input type="text" name="search" id="searchs" value="">
+  </div>
+
   <!-- <input type="submit" value="buscar" > -->
 </form>
 
@@ -95,6 +106,13 @@ var fo = document.querySelector('#form_loguin');
    const forma = document.querySelector('#form_buscar');//formulario
   const fol = document.querySelector('#searchs'); //input
   const iner = document.querySelector('#bod'); 
+  
+    var sl = document.querySelector('#tp_src');
+   
+     
+  
+  
+  
   window.onload = function() {
     var s = '⭐';                 
 fetch('json.php').then(dat=> dat.json())
@@ -145,15 +163,23 @@ viene(); //inicializa la funcion aunque no se ha creado.
 
 var lol = "";
   function viene(){
+
      iner.innerHTML = "";
 
                        let dosmija = fol.value.toLowerCase();
+                       
                           for(let ma of lol) {
-                             let mas = ma.ciudad.toLowerCase();  
+                            var slf = sl.value.toLowerCase();
+                            if(slf == "ciudad"){
+                              var mas = ma.ciudad.toLowerCase(); 
+                            } else{
+                                mas = ma.nombre.toLowerCase();
+                            }
+                              
                                if(mas.indexOf(dosmija) !== -1){ 
                                       var s = '⭐';
                                     // var p = s.repeat(ma.estrellas);
-                                      // console.log(p)
+                                        console.log(slf)
                                      iner.innerHTML +=  ` <div class="info">
                <div class="wrapper_img">
                  <img src="${ma.imagen}">

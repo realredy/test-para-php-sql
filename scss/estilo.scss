@@ -132,6 +132,23 @@ span.msg{
 	background: #808080;
 	overflow: hidden;
 	padding:15px;
+	display: flex; 
+	border: solid #757575 1px;
+	overflow: hidden;
+	align-content:  flex-start;
+	.right {
+		input{
+			width: 100%!important;
+		}
+	}
+	.leg{
+		width: 45%; 
+		max-width: 300px;
+		select{
+			width: 90%; 
+			height: 35px; 
+			border-radius: 3px;}
+	            }
 		  label{
 		  display: block;
 		  color: white; 
@@ -139,13 +156,16 @@ span.msg{
 			 }
 		  input{
 		  height: 30px;
-		  width: 50%;
-		  max-width: 400px;
+		//   width: 50%;
+		//   max-width: 400px;
 		  border: none;
 		  border-radius: 5px;
 		  padding-left: 10px;
 		  font-size: 1.5em;
 		}
   }
-   
+ 
+  
+  
+  
    

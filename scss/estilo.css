@@ -65,10 +65,16 @@ span.msg { padding: 1%; margin: 0 0 20px 0 !important; background: green; displa
 #search input[type="submit"] { margin-bottom: 15px !important; height: 35px; clear: both; background: #EC5B14; width: 35%; color: white; font-weight: 600; }
 
 /* line 131, estilo.scss */
-#form_buscar { background: #808080; overflow: hidden; padding: 15px; }
-/* line 135, estilo.scss */
-#form_buscar label { display: block; color: white; line-height: 30px; }
+#form_buscar { background: #808080; overflow: hidden; padding: 15px; display: flex; border: solid #757575 1px; overflow: hidden; align-content: flex-start; }
 /* line 140, estilo.scss */
-#form_buscar input { height: 30px; width: 50%; max-width: 400px; border: none; border-radius: 5px; padding-left: 10px; font-size: 1.5em; }
+#form_buscar .right input { width: 100% !important; }
+/* line 144, estilo.scss */
+#form_buscar .leg { width: 45%; max-width: 300px; }
+/* line 147, estilo.scss */
+#form_buscar .leg select { width: 90%; height: 35px; border-radius: 3px; }
+/* line 152, estilo.scss */
+#form_buscar label { display: block; color: white; line-height: 30px; }
+/* line 157, estilo.scss */
+#form_buscar input { height: 30px; border: none; border-radius: 5px; padding-left: 10px; font-size: 1.5em; }
 
 /*# sourceMappingURL=estilo.css.map */
